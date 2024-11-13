@@ -1,8 +1,8 @@
 # Streamlit
 streamlit==1.24.0
 
-# Ultralytics YOLOv5 and its dependencies
-ultralytics==8.0.136
+# Ultralytics YOLOv5 and its dependencies (adjusting the version)
+ultralytics==8.0.7  # Use a version that is compatible with Python 3.7 to 3.11
 
 # Py-cpuinfo (for CPU information)
 py-cpuinfo
@@ -10,5 +10,5 @@ py-cpuinfo
 # Pillow for image processing (required by YOLOv5)
 Pillow==9.4.0
 
-# PyTorch (YOLOv5 requires PyTorch, ensure compatibility with your system)
-torch==2.1.0
+# PyTorch (use the latest compatible version)
+torch==2.2.0
