@@ -1,5 +1,14 @@
-ultralytics==8.0.136
+# Streamlit
 streamlit==1.24.0
+
+# Ultralytics YOLOv5 and its dependencies
+ultralytics==8.0.136
+
+# Py-cpuinfo (for CPU information)
 py-cpuinfo
-Pillow==9.0.0
-torch==2.0.0
+
+# Pillow for image processing (required by YOLOv5)
+Pillow==9.4.0
+
+# PyTorch (YOLOv5 requires PyTorch, ensure compatibility with your system)
+torch==2.1.0
