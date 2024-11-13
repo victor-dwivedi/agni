@@ -1,7 +1,7 @@
 import streamlit as st  # type: ignore
 import cv2
 from ultralytics import YOLO
-import requests # type: ignore
+import requests  # type: ignore
 from PIL import Image
 import os
 from glob import glob
@@ -170,7 +170,7 @@ def main():
             st.caption("Choose a model based on the trade-off between speed and precision that best suits your needs.")
 
     # Load the selected model
-    model_path = os.path.join(models_dir, selected_model + ".pt") #type: ignore
+    model_path = os.path.join(models_dir, selected_model + ".pt")  # type: ignore
     model = load_model(model_path)
 
     # Add a section divider
@@ -218,35 +218,4 @@ def main():
                 if response.status_code == 200:
                     image = Image.open(response.raw)
                 else:
-                    st.error("Error loading image from URL.")
-                    image = None
-            except requests.exceptions.RequestException as e:
-                st.error(f"Error loading image from URL: {e}")
-                image = None
-
-    if image:
-        # Display the uploaded image
-        with st.spinner("Detecting"):
-            prediction, text = predict_image(model, image, conf_threshold, iou_threshold)
-            st.image(prediction, caption="Prediction", use_column_width=True)
-            st.success(text)
-        
-        prediction = Image.fromarray(prediction)
-
-        # Create a BytesIO object to temporarily store the image data
-        image_buffer = io.BytesIO()
-
-        # Save the image to the BytesIO object in PNG format
-        prediction.save(image_buffer, format='PNG')
-
-        # Create a download button for the image
-        st.download_button(
-            label='Download Prediction',
-            data=image_buffer.getvalue(),
-            file_name='prediciton.png',
-            mime='image/png'
-        )
-
-        
-if __name__ == "__main__":
-    main()
+                    st
